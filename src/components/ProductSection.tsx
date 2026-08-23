@@ -21,7 +21,6 @@ export default function ProductSection() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5 }}
           >
-            <span className="eyebrow">Shop</span>
             <h2 style={{ fontSize: 'clamp(28px, 3.4vw, 40px)', marginTop: 10 }}>
               Fresh meat options, updated{' '}
               <span className="italic-accent" style={{ color: 'var(--kb-coral)', fontWeight: 500 }}>
