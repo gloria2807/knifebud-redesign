@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* ---- Color tokens (KnifeBud brand) ---- */
+  --kb-cream: #FBF4E9;          /* warm off-white background */
+  --kb-cream-deep: #F5EADA;     /* section alt background */
+  --kb-brown-900: #2A1B12;      /* deep brown - primary text / dark sections */
+  --kb-brown-700: #4A362A;      /* secondary text on cream */
+  --kb-brown-500: #7A6350;      /* muted / captions */
+  --kb-coral: #E85B2C;          /* KnifeBud orange/coral - primary accent */
+  --kb-coral-dark: #C94A21;     /* hover / pressed */
+  --kb-coral-tint: #FCE3D4;     /* light coral wash */
+  --kb-coral-tint-2: #FBEEE1;   /* faint coral wash */
+  --kb-white: #FFFDF9;
+  --kb-line: rgba(42, 27, 18, 0.10);
+  --kb-line-strong: rgba(42, 27, 18, 0.16);
+
+  /* ---- Typography ---- */
+  --font-display: 'Manrope', -apple-system, sans-serif;
+  --font-accent: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  /* ---- Radii ---- */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 2px 8px rgba(42, 27, 18, 0.06);
+  --shadow-md: 0 8px 24px rgba(42, 27, 18, 0.10);
+  --shadow-lg: 0 16px 48px rgba(42, 27, 18, 0.14);
+
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --container-w: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--kb-cream);
+  color: var(--kb-brown-900);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--kb-brown-900);
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.italic-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--kb-coral-dark);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 14px 26px;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible {
+  outline: 3px solid var(--kb-brown-900);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--kb-coral);
+  color: var(--kb-white);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+  background: var(--kb-coral-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--kb-white);
+  color: var(--kb-brown-900);
+  border: 1.5px solid var(--kb-line-strong);
+}
+.btn-secondary:hover {
+  border-color: var(--kb-brown-900);
+  background: var(--kb-cream-deep);
+}
+
+.btn-dark {
+  background: var(--kb-brown-900);
+  color: var(--kb-white);
+}
+.btn-dark:hover { background: #1c110b; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .container { padding: 0 var(--space-4); }
+}
