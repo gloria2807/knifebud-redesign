@@ -99,7 +99,7 @@ export default function Hero() {
   }}
 >
   <img
-    src="/knifebud-hero-3d.png"
+    src="/products/hero.png"
     alt="Fresh beef, chicken, turkey, fish and eggs from KnifeBud"
     style={{
       width: '100%',
