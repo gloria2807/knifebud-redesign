@@ -1,5 +1,3 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Catalog from './components/Catalog';
@@ -10,32 +8,41 @@ import KnifeSharpening from './components/KnifeSharpening';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 
-function Home() {
+function HomePage() {
   return (
     <>
-      <Hero />
-      <ProductSection />
-      <HowItWorks />
-      <SarahSection />
-      <KnifeSharpening />
-      <Testimonials />
+      <Navbar />
+      <main>
+        <Hero />
+        <ProductSection />
+        <HowItWorks />
+        <SarahSection />
+        <KnifeSharpening />
+        <Testimonials />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function CatalogPage() {
+  return (
+    <>
+      <Navbar />
+      <Catalog />
+      <Footer />
     </>
   );
 }
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Navbar />
+  const path = window.location.pathname.replace(/\/$/, '');
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
-      </Routes>
+  if (path === '/catalog') {
+    return <CatalogPage />;
+  }
 
-      <Footer />
-    </BrowserRouter>
-  );
+  return <HomePage />;
 }
 
 export default App;
