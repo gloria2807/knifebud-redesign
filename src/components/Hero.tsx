@@ -23,7 +23,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <span className="eyebrow">Fresh meat, delivered in Lagos</span>
 
           <h1 style={{
             fontSize: 'clamp(38px, 5.4vw, 64px)',
